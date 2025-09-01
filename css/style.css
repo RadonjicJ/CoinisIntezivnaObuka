@@ -1,6 +1,10 @@
-body {
+html {
   font-size: 10px;
+}
+body {
+  font-size: 1.4rem;
   font-family: Arial, sans-serif;
+  margin: 0;
 }
 
 h2 {
@@ -8,8 +12,27 @@ h2 {
   color: green;
 }
 
-.products {
-  text-transform: capitalize;
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.section-box {
+  padding: 1rem 2rem;
+  border: 1px solid gray;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.section-box:hover {
+  background-color: rgba(128, 128, 128, 0.238);
 }
 
 /*header*/
@@ -24,15 +47,10 @@ header {
 }
 
 header .header-title {
-  font-size: 1.4rem;
   position: absolute;
   bottom: 5rem;
   right: 1.5rem;
   color: #fff;
-}
-
-header .header-menu {
-  display: flex;
 }
 
 header .header-menu {
@@ -41,7 +59,6 @@ header .header-menu {
 }
 
 header .header-menu li {
-  font-size: 1.4rem;
   list-style: none;
   text-transform: uppercase;
   background-color: rgba(128, 128, 128, 0.634);
@@ -54,13 +71,30 @@ header .header-menu li a:link {
   color: rgb(76, 75, 75);
 }
 
-/* home section*/
+/* main */
+main {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 20px;
+  padding: 2rem 1rem;
+}
 
-.hover-style:hover {
-  background-color: rgba(128, 128, 128, 0.238);
+.products .products-title {
+  text-transform: capitalize;
+}
+
+.products .product-item {
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.products .product-item img {
+  width: 15rem;
 }
 
 /*Footer style*/
-footer {
+.copyright {
   background-color: lightgreen;
+  padding: 1rem 2rem;
+  text-align: center;
 }
