@@ -1,0 +1,61 @@
+body {
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-transform: uppercase;
+  color: green;
+}
+
+.products {
+  text-transform: capitalize;
+}
+
+/*header*/
+header img {
+  width: 100%;
+}
+
+header {
+  position: relative;
+}
+header .header-title {
+  font-size: 1.4rem;
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  color: #fff;
+}
+
+header .header-menu {
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.634);
+  margin-top: -0.5rem;
+}
+
+header .header-menu li {
+  font-size: 1.4rem;
+  list-style: none;
+  text-transform: uppercase;
+  padding: 10px 30px;
+}
+header .header-menu li:first-of-type {
+  padding-left: 0;
+}
+
+header .header-menu li a:link {
+  text-decoration: none;
+  color: rgb(76, 75, 75);
+}
+
+/* home section*/
+
+.hover-style:hover {
+  background-color: rgba(128, 128, 128, 0.238);
+}
+
+/*Footer style*/
+footer {
+  background-color: lightgreen;
+}
