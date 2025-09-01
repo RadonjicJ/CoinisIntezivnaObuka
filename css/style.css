@@ -15,33 +15,38 @@ h2 {
 /*header*/
 header img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
 header {
   position: relative;
 }
+
 header .header-title {
   font-size: 1.4rem;
   position: absolute;
-  bottom: 40px;
-  right: 10px;
+  bottom: 5rem;
+  right: 1.5rem;
   color: #fff;
 }
 
 header .header-menu {
   display: flex;
-  background-color: rgba(128, 128, 128, 0.634);
-  margin-top: -0.5rem;
+}
+
+header .header-menu {
+  margin: 0;
+  padding: 0;
 }
 
 header .header-menu li {
   font-size: 1.4rem;
   list-style: none;
   text-transform: uppercase;
-  padding: 10px 30px;
-}
-header .header-menu li:first-of-type {
-  padding-left: 0;
+  background-color: rgba(128, 128, 128, 0.634);
+  padding: 1rem 3rem;
+  margin-right: 0.2rem;
 }
 
 header .header-menu li a:link {
