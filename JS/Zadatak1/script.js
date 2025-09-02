@@ -10,10 +10,12 @@ const studenti = [
 //Ukoliko student ne zadovoljava kriterijum, ispiši samo njegovo ime.
 
 function obidjiStudente(studenti) {
+  let studentArr = [];
   studenti.forEach((element) => {
     let prosjek = izracunajProsjek(element.ocjene);
 
     student = { prosjek: prosjek, student: element };
+    studentArr.push(student);
 
     console.log(`Prosjek  ${prosjek}`);
     if (prosjek > 8.5) {
@@ -23,7 +25,7 @@ function obidjiStudente(studenti) {
     }
   });
 
-  return student;
+  return studentArr;
 }
 
 const studentArray = obidjiStudente(studenti);
@@ -42,12 +44,27 @@ console.log(studentArray);
 
 function najvisiProsjek(studentArray) {
   let student = {};
+  let max = 0;
   studentArray.forEach((element) => {
     if (element.prosjek > max) {
+      max = element.prosjek;
       student = element;
     }
   });
+  console.log(student);
   return student;
 }
+let najboljiStudent = najvisiProsjek(studentArray);
+console.log("Student sa najvisim prosjekom :", najboljiStudent);
 
-console.log(`Student sa najvisim prosjekom : ${najvisiProsjek(studentArray)}`);
+// Napisati funkciju koja izračunava i ispisuje prosječan prosjek svih studenata u nizu.
+function prosjecanProsjek(studentArray) {
+  let sum = 0;
+  studentArray.forEach((element) => {
+    sum += element.prosjek;
+  });
+  console.log(sum);
+  return (sum / studentArray.length).toFixed(2);
+}
+
+console.log(`Prosjecni prosjek studenata: ${prosjecanProsjek(studentArray)}`);
