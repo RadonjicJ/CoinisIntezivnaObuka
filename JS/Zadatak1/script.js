@@ -28,7 +28,7 @@ function obidjiStudente(studenti) {
   return studentArr;
 }
 
-const studentArray = obidjiStudente(studenti);
+let studentArray = obidjiStudente(studenti);
 
 function izracunajProsjek(ocjene) {
   let sum = 0;
@@ -68,3 +68,12 @@ function prosjecanProsjek(studentArray) {
 }
 
 console.log(`Prosjecni prosjek studenata: ${prosjecanProsjek(studentArray)}`);
+
+//Napisati funkciju koja sortira studente po prosjeku u opadajućem redosledu i ispisuje ih.
+function sortiranjePoProsjeku(studentArray) {
+  studentArray.sort((s1, s2) => s2.prosjek - s1.prosjek);
+  return studentArray;
+}
+
+studentArray = sortiranjePoProsjeku(studentArray);
+console.log("Sortirani niz: ", studentArray);
