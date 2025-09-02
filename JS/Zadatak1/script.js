@@ -14,7 +14,7 @@ function obidjiStudente(studenti) {
   studenti.forEach((element) => {
     let prosjek = izracunajProsjek(element.ocjene);
 
-    student = { prosjek: prosjek, student: element };
+    student = { prosjek: prosjek, ...element };
     studentArr.push(student);
 
     console.log(`Prosjek  ${prosjek}`);
@@ -77,3 +77,6 @@ function sortiranjePoProsjeku(studentArray) {
 
 studentArray = sortiranjePoProsjeku(studentArray);
 console.log("Sortirani niz: ", studentArray);
+
+// Za svakog studenta u nizu, dodajte novi ključ prosjek sa odgovarajućom vrijednošću i
+// ispišite novonastali niz studenata.
