@@ -7,25 +7,6 @@ slider.oninput = function () {
   output.innerHTML = this.value;
 };
 
-const buttons = document.querySelectorAll(".button");
-
-buttons.forEach((button) => {
-  button.addEventListener("click", (e) => {
-    console.log(e);
-    if (e.classList.contains("Q")) {
-      // pustaj zvuk
-    } else if (e.classList.contains("W")) {
-    } else if (e.classList.contains("E")) {
-    } else if (e.classList.contains("A")) {
-    } else if (e.classList.contains("S")) {
-    } else if (e.classList.contains("D")) {
-    } else if (e.classList.contains("Z")) {
-    } else if (e.classList.contains("X")) {
-    } else if (e.classList.contains("C")) {
-    }
-  });
-});
-
 const bankOne = [
   {
     keyCode: 81,
@@ -139,3 +120,44 @@ const bankTwo = [
     url: "https://s3.amazonaws.com/freecodecamp/drums/Brk_Snr.mp3",
   },
 ];
+
+let currentBank = bankOne;
+
+const buttons = document.querySelectorAll(".button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    console.log(e);
+    if (e.target.classList.contains("Q")) {
+      playSound("Q");
+    } else if (e.target.classList.contains("W")) {
+      playSound("W");
+    } else if (e.target.classList.contains("E")) {
+      playSound("E");
+    } else if (e.target.classList.contains("A")) {
+      playSound("A");
+    } else if (e.target.classList.contains("S")) {
+      playSound("S");
+    } else if (e.target.classList.contains("D")) {
+      playSound("D");
+    } else if (e.target.classList.contains("Z")) {
+      playSound("Z");
+    } else if (e.target.classList.contains("X")) {
+      playSound("X");
+    } else if (e.target.classList.contains("C")) {
+      playSound("C");
+    }
+  });
+
+  button.addEventListener("keydown", (e) => {
+    console.log(e);
+    playSound(e.key.toUpperCase());
+  });
+});
+
+function playSound(keyTrigger) {
+  const audio = new Audio(
+    currentBank.find((sound) => sound.keyTrigger === keyTrigger).url
+  );
+  audio.play();
+}
