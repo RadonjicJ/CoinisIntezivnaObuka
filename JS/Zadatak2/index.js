@@ -128,25 +128,7 @@ const buttons = document.querySelectorAll(".button");
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     console.log(e);
-    if (e.target.classList.contains("Q")) {
-      playSound("Q");
-    } else if (e.target.classList.contains("W")) {
-      playSound("W");
-    } else if (e.target.classList.contains("E")) {
-      playSound("E");
-    } else if (e.target.classList.contains("A")) {
-      playSound("A");
-    } else if (e.target.classList.contains("S")) {
-      playSound("S");
-    } else if (e.target.classList.contains("D")) {
-      playSound("D");
-    } else if (e.target.classList.contains("Z")) {
-      playSound("Z");
-    } else if (e.target.classList.contains("X")) {
-      playSound("X");
-    } else if (e.target.classList.contains("C")) {
-      playSound("C");
-    }
+    playSound(e.target.innerHTML);
   });
 
   button.addEventListener("keydown", (e) => {
