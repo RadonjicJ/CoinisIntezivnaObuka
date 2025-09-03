@@ -121,7 +121,7 @@ const bankTwo = [
   },
 ];
 
-let currentBank = bankOne;
+let currentBank = bankTwo;
 
 const buttons = document.querySelectorAll(".button");
 
@@ -143,3 +143,12 @@ function playSound(keyTrigger) {
   );
   audio.play();
 }
+
+const soundSwitch = document.getElementById("bank-switch");
+soundSwitch.addEventListener("change", function (e) {
+  if (soundSwitch.checked) {
+    currentBank = bankOne;
+  } else {
+    currentBank = bankTwo;
+  }
+});

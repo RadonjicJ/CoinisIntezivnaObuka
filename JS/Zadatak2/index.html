@@ -25,24 +25,29 @@
         <aside class="aside">
           <p>Power</p>
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox" id="power-switch" />
             <span class="sliderButton"></span>
           </label>
+          <p id="sound-name" style="color: red">Power: OFF</p>
           <br />
+
           <button class="heater">Heater 2</button>
+
+          <p>Volume: <span id="volume-value">50</span></p>
           <div class="slidecontainer">
             <input
               type="range"
-              min="1"
+              min="0"
               max="100"
               value="50"
               class="slider"
               id="myRange"
             />
           </div>
+
           <p>Bank</p>
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox" id="bank-switch" />
             <span class="sliderButton"></span>
           </label>
         </aside>
