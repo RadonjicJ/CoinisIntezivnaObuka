@@ -11,6 +11,17 @@
   flex: 30.33%;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
+.power-on {
+  color: green;
+}
+.power-off {
+  color: red;
+}
+
 .buttons {
   margin-right: 50px;
 }

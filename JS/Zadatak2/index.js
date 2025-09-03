@@ -122,6 +122,7 @@ const bankTwo = [
 ];
 
 let currentBank = bankTwo;
+let isPowerOn = true;
 
 const buttons = document.querySelectorAll(".button");
 
@@ -141,7 +142,9 @@ function playSound(keyTrigger) {
   const audio = new Audio(
     currentBank.find((sound) => sound.keyTrigger === keyTrigger).url
   );
-  audio.play();
+  if (isPowerOn) {
+    audio.play();
+  }
 }
 
 const soundSwitch = document.getElementById("bank-switch");
@@ -150,5 +153,22 @@ soundSwitch.addEventListener("change", function (e) {
     currentBank = bankOne;
   } else {
     currentBank = bankTwo;
+  }
+});
+
+// power off -on
+const powerOn = document.querySelector(".power-on");
+const powerOff = document.querySelector(".power-off");
+const powerSwitch = document.querySelector("#power-switch");
+
+powerSwitch.addEventListener("change", function (e) {
+  if (powerSwitch.checked) {
+    isPowerOn = true;
+    powerOff.classList.add("hidden");
+    powerOn.classList.remove("hidden");
+  } else {
+    isPowerOn = false;
+    powerOff.classList.remove("hidden");
+    powerOn.classList.add("hidden");
   }
 });
