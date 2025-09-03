@@ -122,7 +122,7 @@ const bankTwo = [
 ];
 
 let currentBank = bankTwo;
-let isPowerOn = true;
+let isPowerOn = false;
 
 const buttons = document.querySelectorAll(".button");
 
@@ -144,6 +144,7 @@ function playSound(keyTrigger) {
   );
   if (isPowerOn) {
     audio.play();
+    showName(currentBank.find((sound) => sound.keyTrigger === keyTrigger).id);
   }
 }
 
@@ -172,3 +173,9 @@ powerSwitch.addEventListener("change", function (e) {
     powerOn.classList.add("hidden");
   }
 });
+
+// ispisivanje imena
+const heater = document.querySelector(".heater");
+function showName(name) {
+  heater.innerText = name;
+}
